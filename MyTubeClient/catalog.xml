@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://192.168.25.4:8084/MyTubeWS/MyTubeService?wsdl" uri="src/conf/xml-resources/web-service-references/MyTubeService/wsdl/192.168.25.4_8084/MyTubeWS/MyTubeService.wsdl"/>
+    <system systemId="http://192.168.25.4:8084/MyTubeWS/MyTubeService?xsd=1" uri="src/conf/xml-resources/web-service-references/MyTubeService/wsdl/192.168.25.4_8084/MyTubeWS/MyTubeService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8084/MyTubeWS/MyTubeService?wsdl" uri="src/conf/xml-resources/web-service-references/MyTubeService/wsdl/localhost_8084/MyTubeWS/MyTubeService.wsdl"/>
+    <system systemId="http://localhost:8084/MyTubeWS/MyTubeService?xsd=1" uri="src/conf/xml-resources/web-service-references/MyTubeService/wsdl/localhost_8084/MyTubeWS/MyTubeService.xsd_1.xsd"/>
+</catalog>

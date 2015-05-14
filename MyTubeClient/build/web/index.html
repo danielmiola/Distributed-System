@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../favicon.ico">
+
+        <title>Mytube</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="css/jumbotron-narrow.css" rel="stylesheet">
+
+        <!-- JQuery core -->
+        <script src="js/jquery-2.1.1.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="header">
+                <nav>
+                    <ul class="nav nav-pills pull-right">
+                        <li id="nav-upload" role="presentation" class="active"><a href="#">Upload</a></li>
+                        <li id="nav-download" role="presentation"><a href="#">Download</a></li>
+                    </ul>
+                </nav>
+                <h3 class="text-muted"><a href="index.html">MyTube</a></h3>
+            </div>
+
+            <div class="container" id="container-upload">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Enviar um vídeo</div>
+                    <div class="panel-body">
+                        <form role="form" id="form-upload" action="upload.jsp" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="file">Selecione um arquivo:</label>
+                                <input  type="file" name="file" id="file"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="descricao">Descrição do vídeo:</label>
+                                <input class="form-control" type="text" name="descricao" id="descricao"/>
+                            </div>
+                            <input class="btn btn-success pull-right" type="submit" value="Enviar" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container" id="container-download">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Baixar um vídeo</div>
+                    <div class="panel-body">
+                        <form role="form" id="form-download" action="description.jsp" method="get" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="id">ID do vídeo:</label>
+                                <input class="form-control" type="text" name="arquivoID" id="id"/>
+                            </div>
+                            <input class="btn btn-success pull-right" type="submit" value="Buscar vídeo" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer">
+            <p>&copy; Alexandre - Daniel - Sistemas Distribuidos - UFSCar</p>
+            </footer>
+
+        </div> <!-- /container -->
+
+        <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#container-download').hide(0.00000001);
+            
+            $('#nav-download').click(function(){
+                $('#container-upload').hide(0.00000001);
+                $('#nav-upload').removeClass('active');
+                $('#nav-download').addClass('active');
+                $('#container-download').fadeIn('slow');
+                $('#form-download').trigger("reset");
+                $('#form-upload').trigger("reset");
+            });
+
+            $('#nav-upload').click(function(){
+                $('#container-download').hide(0.00000001);
+                $('#nav-download').removeClass('active');
+                $('#nav-upload').addClass('active');
+                $('#container-upload').fadeIn('slow');
+                $('#form-download').trigger("reset");
+                $('#form-upload').trigger("reset");
+            });
+        });
+        </script>
+    </body>
+</html>
